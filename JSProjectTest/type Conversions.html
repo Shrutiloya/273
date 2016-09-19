@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Type conversion</title>
+<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+<body>
+	Type Conversion
+	<br>
+	<br>
+	<label for="inputDate">Date:</label>
+	<input type="date" id="inputDate">
+	<br>
+	<table>
+		<tr>
+			<td><button onclick="changeType()">Get date in String</button></td>
+			<td><button onclick="getCurrentDate()">Get today's date</button>
+			</td>
+		</tr>
+	</table>
+	<div id="dateConverted"></div>
+
+	<script>
+		function changeType() {
+			var inputDate = document.getElementById('inputDate').value;
+			var stringDate = String(inputDate);
+			document.getElementById('dateConverted').innerHTML = "The date entered is "
+					+ stringDate;
+		}
+		function getCurrentDate() {
+			document.getElementById('dateConverted').innerHTML = "Today's date is "
+					+ String(Date());
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="Stylesheet" href="background.css" type="text/css" />
+	<title>Restaurant Reservations</title>
+</head>
+<body>
+		<h1>Assignment 1 - Arrays</h1><br>
+		<h2>Mudai Restaurant Waitlist Diary</h2>
+		<b>Enter the Name of the Customer : </b>
+		<table>
+	
+			<tr>
+				<input name="name" id="name" type="text" value=""/>
+			</tr>
+			<tr>
+				<td><input type="button" id="add" onclick="addCustomerToWaitlist()" value="ADD CUSTOMER" align="centre"/></td>
+			</tr>
+		</table>
+	
+	
+	<p>The Current Customer List:</p>
+	<p id="demo"></p>
+	
+	<script>
+	
+		var fruits, text, fLen, i,custName;
+		var custArray =[];
+		 
+		 function addCustomerToWaitlist()
+		 {
+			 custName = document.getElementById('name').value;
+			 custArray.push(custName);
+			 displayTheCurrentList()
+			  
+		 }
+		 function displayTheCurrentList()
+		 {
+			 text = "<ul>";
+			 for (i = 0; i < custArray.length; i++)
+			 {
+			     text += (i+1) +". " + custArray[i] +"<br>";
+			     document.getElementById("demo").innerHTML = text;
+			 } 
+		 }
+	
+	 </script>
+</body>
+</html>

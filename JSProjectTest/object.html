@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object assignment: University SE Department Details</title>
+	<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+
+<body>
+
+	<h1>Assignment 1 - Objects</h1>
+	<p>Welcome to SJSU SE department.</p>
+	<p id="demo"></p>
+
+	<script>
+
+ 		var SJSU = 
+		{
+			dept :"Software Engineering",
+			courseNo: "Please enter",
+			course1:"Enterprise Software Overview",
+			course2:"Software System Engieering",
+			enterCourse: function()
+			{
+			        this.courseNo = prompt("Please enter the CMPE course number")
+			},
+	 		displayCourseDetails: function()
+			{
+					 if(this.courseNo === '202') 
+						alert("The course name is: "+this.course1);
+					 else if(this.courseNo === '272')
+						 alert("The course name is: "+this.course2);
+					 else
+						 alert("Invalid Course");
+		    } 
+		}
+		SJSU.enterCourse();
+ 		SJSU.displayCourseDetails();
+ 
+	</script>
+
+</body>
+</html>

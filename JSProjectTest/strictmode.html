@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Strict Mode Demo</title>
+<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+<body onLoad="main()"> 
+  <div id="main_div" align="center"> 
+  <h1>Assignment 1 - Strict Mode</h1>  
+  <h2>Converting mistakes into errors </h2>  
+  <h3>1. Use of Undeclared variables </h3> 
+    <div id="error1" class="error"></div> 
+    <h3> 2. Assigning value to a non-writable property like not-a-number NAN</h3> 
+     <div id="error2" class="error"></div> 
+      </div> 
+<script>
+"use strict";  
+
+function main()
+{  
+	result1(); 
+	result2(); 
+}
+
+function result1()
+{ 
+	try
+	{   myVar = 15; 
+	}
+    catch (error)
+    { 
+    	document.getElementById("error1").innerHTML = error; 
+    } 
+  
+} 
+
+function result2()
+{  
+	try
+	{
+		NaN=18;
+		
+	}
+	catch(error)
+	{
+		document.getElementById("error2").innerHTML = error; 
+	}
+	
+} 
+
+</script>
+
+</body>
+</html>

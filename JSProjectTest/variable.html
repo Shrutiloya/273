@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Variable assignment: Calculate Carpet Area</title>
+	<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+
+<body>
+ <div align="center">  
+ 	 <h1>Assignment 1 - Variables</h1></div>
+            <table>
+                <tr>
+                    <td>
+                        <b>Please enter the Length and breadth of the area to calculate and then click on submit button.
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <b>Enter measurements</b>
+                        <table>
+                            <tr>
+                                <td>
+                                    Length:
+                                </td>
+                                <td>
+                                    <input name="length" id="len" type="text" value="0" />ft.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Width:
+                                </td>
+                                <td>
+                                    <input name="width" id="width" type="text" value="0" />ft.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" align="center">
+                                    <input type="button" id="Submit" onclick="calculateCarpetArea()" value="Submit" />
+                                </td>
+                            </tr>
+        
+                </table>
+                        <p id="answer"></p>
+                   
+                    </td>
+                </tr>
+ 
+            </table>
+	<script>
+		function calculateCarpetArea()
+		{
+			var length = document.getElementById('len').value;
+			var width = document.getElementById('width').value;
+			var answer = length * width;
+			document.getElementById('answer').innerHTML="The Carpet Area = "+answer+"&nbspft.";
+		}
+	</script>
+	
+	
+</body>
+
+</html>

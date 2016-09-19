@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Local Storage Assignment</title>
+<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+<body>
+	<h1>Assignment 1 - Local Storage</h1>
+	<br>
+	<table>
+		<tr>
+			<td><b>Enter the places you like to visit: </b></td>
+			<td><input name="place" id="place" type="text" value="" /></td>
+			<td><input type="button" id="add" onclick="addToFavplaceList()"
+				value="Add to Favorites" /></td>
+			<td><input type="button" id="display"
+				onclick="displayFavplaceList()" value="Display Favorites" /></td>
+		</tr>
+
+	</table>
+	<h3 id="h1"></h3>
+	<div id="result"></div>
+
+	<script>
+		var favplace = [];
+		function addToFavplaceList() {
+			if (typeof (localStorage) !== "undefined"
+					&& localStorage.length > 0) {
+				favplace = [];
+				favplace.push(localStorage.favplace);
+			}
+			place = document.getElementById("place").value;
+			favplace.push(place);
+			localStorage.favplace = favplace;
+			alert(place + " has been succesfully added");
+		}
+
+		function displayFavplaceList() {
+			document.getElementById("h1").innerHTML = "Your Favorite Places are:"
+			if (typeof (Storage) !== "undefined") {
+				document.getElementById("result").innerHTML = localStorage.favplace;
+			} else {
+				document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+			}
+		}
+	</script>
+
+</body>
+</html>

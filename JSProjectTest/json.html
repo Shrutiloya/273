@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>JSON assignment: student list</title>
+<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+<body>
+
+<h1>Students</h1>
+<h3>First Name &nbsp;&nbsp;&nbsp; Last Name</h3>
+<div id="demo"></div>
+
+<script>
+var text = '{"students":[' +
+'{"firstName":"Chandler","lastName":"Bing" },' +
+'{"firstName":"Ross","lastName":"Gellar" },' +
+'{"firstName":"Joey","lastName":"Tribbiani" },' +
+'{"firstName":"Monica","lastName":"Gellar" },' +
+'{"firstName":"Rachel","lastName":"Green" }]}';
+
+
+    var arr = JSON.parse(text);
+    var i;
+    var res = "<table>";
+
+    
+    for(i = 0; i < arr.students.length; i++) {
+        res += "<tr><td>" + 
+        arr.students[i].firstName +
+        "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</td><td>" +
+        arr.students[i].lastName +
+        "</td></tr>";
+    }
+    res += "</table>";
+    document.getElementById("demo").innerHTML = res;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Error handling Demo</title>
+<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+<body>
+
+  <h1>Assignment 1 - Error</h1> 
+<table>
+ <tr>
+                                <td>
+                                  <b>Enter your phone number: </b>
+                                </td>
+                                <td>
+                                    <input name="phone" id="phone" type="text" value="" />
+                                </td>
+                                 <td>
+                                    <input type="button" id="validate" onclick="validatePhone()"value="Validate" />
+                                </td>
+                            </tr>
+		
+</table>
+<p id="demo"></p>
+<script>
+
+function validatePhone()
+{
+	var phoneNo= document.getElementById("phone").value;
+	
+	try
+	{
+		 if(phoneNo == "")  throw "empty";
+	     if(isNaN(phoneNo)) throw "not a number";		
+	     if(phoneNo.length > 11) throw "more than 11 digits(should be < 11)";
+	}
+	 catch(err) 
+	 {
+	        demo.innerHTML = "The entered phone number is " + err;
+	 }
+	 finally
+	 {
+		 document.getElementById("phone").value="";
+	 }
+
+}
+
+</script>
+
+</body>
+</html>

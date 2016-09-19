@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+<body>
+
+	<h1>Assignment 1 - Events</h1><br>
+	<h1 onmouseover="changeText(this)" onmouseout="originalText(this)" onclick="colorChange(this)">iPhone 7</h1>
+
+	<script>
+		function changeText(id)
+		{
+		    id.innerHTML = "iPhone 7 Specifications: "+'<br />'+'<br />'+"OS : iOS 10"+'<br />'+"Camera: 12MP"+'<br />'+"Chip: A10";
+		}
+		
+		function originalText(id)
+		{
+			id.innerHTML = "iPhone 7 Launch";
+		}
+		function colorChange(id)
+		{
+			var txt="Grab iPhone 7 now !!! " ;
+			id.innerHTML = txt.fontcolor("blue");
+		}
+	</script>
+
+</body>
+</html> 

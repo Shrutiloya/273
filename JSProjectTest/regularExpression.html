@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>UrlValidator</title>
+<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+<body>
+		<h1>Assignment 1 - Regular Expression</h1>
+		<table>
+		 <tr>
+		     <td>
+		       <b>URL: </b>
+		     </td>
+		     <td>
+		       <input name="url" id="url" type="text" size="70" value="" />
+		     </td>
+		     <td>
+		       <input type="button" id="search" onclick="validateUrl()"value="Search" />
+		     </td>
+		  </tr>
+		</table>
+		
+	<p id="demo"></p>
+	
+	<script>
+		function validateUrl()
+		{
+			var url1 = document.getElementById("url").value;
+		
+			 var validUrlRegex = /((?:https?\:\/\/|www\.)(?:[-a-z0-9]+\.)*[-a-z0-9]+.*)/i;
+				if(validUrlRegex.test(url1))
+				{
+				 	alert("Valid URL");
+				}
+				else
+				{
+					alert("Invalid URL. Please try again");
+				}
+		}
+	</script>
+
+</body>
+</html>

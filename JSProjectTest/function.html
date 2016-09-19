@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Function Assignment:Calculate Water intake</title>
+	<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+
+<body>
+	<h1>Assignment 1 - Functions</h1><br>
+	<b>Please enter the age of the child and then click on Calculate button to know the water amount.<br>
+	<form action="#" method="post" class="demoForm" id="demoForm">
+		<input type="radio" name="weight" value="w1" checked> Between 0 to 05 kgs<br>
+		<input type="radio" name="weight" value="w2">Between 05 to 10 kgs<br>
+		<input type="radio" name="weight" value="w3"> Between 10 to 15 kgs <br>
+		<button onclick="calculateWaterIntake(document.getElementById('demoForm'),'weight')">Calculate</button>
+	</form> 
+	
+	
+	<script>
+			function calculateWaterIntake(form, weight)
+			{
+				var radioBtns = form.elements[weight];
+				for (var i = 0; i <= radioBtns.length; i++)
+				{
+					if (radioBtns[i].checked)
+					{
+						var val = radioBtns[i].value;
+						displayResult(val);
+					}
+				}
+
+			}
+
+			function displayResult(val)
+			{
+
+				switch (val) 
+				{
+					case 'w1': alert("You need to drink at least 2 glasses of water everyday.");
+							   break;
+
+					case 'w2': alert("You need to drink at least 4 glasses of water everyday.");
+							   break;
+
+					case 'w3': alert("You need to drink at least 6 glasses of water everyday.");
+							   break;
+
+				}
+
+			}
+	</script>
+
+</body>
+</html>

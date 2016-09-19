@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="Stylesheet" href="background.css" type="text/css" />
+	<title>GeoLocation</title>
+</head>
+<body>
+<h1>Assignment 1 - Geolocation</h1><br>
+<h3>Click to know your location coordinates </h3></br>
+
+<button onclick="showLocation()">Show My Location Details</button>
+
+<p id="result"></p>
+
+<script>
+	
+		
+	function showLocation() {
+		if (navigator.geolocation)
+		{
+			navigator.geolocation.getCurrentPosition(function(position)
+			{
+				document.getElementById("result").innerHTML = "Latitude: "
+						+ position.coords.latitude + " <br> " + "Logitude: "
+						+ position.coords.longitude + "<br>" + "Accuracy: "
+						+ position.coords.accuracy + "<br>" + "Altitude: "
+						+ position.coords.altitude + "<br>"
+						+ "Altitude Accuracy: "
+						+ position.coords.altitudeAccuracy + "<br>";
+			});
+		} else 
+		{
+			alert("location not available");
+		}
+	}
+</script>
+
+</body>
+</html>

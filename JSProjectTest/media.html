@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<title>Media assignment</title>
+<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+
+<body>
+	
+			<div align="center">   
+			<h1>Assignment 1 - Media</h1>
+			<h2>Type sample video/audio url having .mp4 or .mp3 exetension and click on play button. <br></h2>
+			<input type="text" id="mediaUrl" size="80" value="" /><br>
+	
+		<video id="myvideo">
+		</video><br>
+		<audio id="myaudio">
+		</audio>
+		<button id="play" class="button" onclick="play()">Play Media</button>
+</div>
+	<script>  
+    var mediaUrl = document.getElementById('mediaUrl');
+function play()
+{
+
+	var length = mediaUrl.value.length;
+	var lastChar = mediaUrl.value.substring(length-1,length);
+	
+  if(lastChar === "4")
+	 {
+	 playVideo();
+	 }
+ else if(lastChar === "3")
+	 {
+	 playAudio(); 
+	 }
+ else
+	 {
+	  alert("Unsupported Media File");
+	 } 
+	
+}
+    
+    function playVideo() 
+{ 
+	if (window.HTMLAudioElement)
+    {
+      
+            var oAudio = document.getElementById('myvideo');
+            var btn = document.getElementById('playvideo');
+            oAudio.src = mediaUrl.value;
+            if (oAudio.paused)
+			{
+            	
+            	oAudio.play();
+                btn.textContent = "Pause";
+            }
+            else 
+            {
+                oAudio.pause();
+                btn.textContent = "Play";
+            }
+        
+    }
+} 
+
+function playAudio()
+{
+
+    if (window.HTMLAudioElement)
+    {
+      
+            var oAudio = document.getElementById('myaudio');
+            var btn = document.getElementById('play');
+            var audioURL = document.getElementById('mediaUrl');
+            oAudio.src = mediaUrl.value;
+            if (oAudio.paused)
+			{
+            	oAudio.play();
+                btn.textContent = "Pause";
+            }
+            else 
+            {
+                oAudio.pause();
+                btn.textContent = "Play";
+            }
+        
+    }
+}
+</script> 
+
+</body> 
+</html>

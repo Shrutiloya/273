@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>html input types</title>
+<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+
+<body>
+	<div id="main_div" align="center">
+		<h1>Assignment 1 - HTML5 input types</h1>
+		<h3>Please enter the Registration form</h3>
+	</div>
+	<form>
+		<table align="center">
+                            <tr>
+                                <td>
+                                    Name:
+                                </td>
+                                <td>
+                                    <input type="text" id="name" placeholder="Enter your name" Autofocus />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    BirthDate:
+                                </td>
+                                <td>
+                                   <input type="date" id="bdate" placeholder="Enter birth date" />
+                                </td>
+                            </tr>
+                            
+                             <tr>
+                                <td>
+                                     Male: <input type="checkbox" id="male">
+                                </td>
+                                <td>
+									Female: <input type="checkbox" id="female">
+                          		</td>
+                            </tr>
+                             <tr>
+                                <td>
+                                    Email:
+                                </td>
+                                <td>
+                                   <input type="email" id="email" placeholder="Enter email" required />
+                                </td>
+                            </tr>
+                            
+            				 <tr>
+                                <td>
+                                    Phone:
+                                </td>
+                                <td>
+                                   <input type="tel" id="tel" placeholder="Enter Phone number" />
+                                </td>
+                            </tr>            
+                            
+                             <tr>
+                            
+                            
+                                <td>
+                                    <input type="button" id="Submit" onclick="register()" value="Register" />
+                                  </td> <td> <input type="reset" value="Reset" onClick="this.form.reset()" /><br>
+                                </td>
+                            </tr>
+        
+                </table>
+               </form>
+               
+      <script>
+      function register()
+      {
+    	  alert("Registered successfully");
+      }
+      
+      </script>
+	
+</body>
+</html>
+

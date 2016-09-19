@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Assignment 1 - Inheritance</title>
+<link rel="Stylesheet" href="background.css" type="text/css" />
+</head>
+<body>
+	<div id="main_div">
+		<h1>Assignment 1 - Inheritance</h1>
+		<form>
+			<table>
+			<tr>
+			<td>
+				Name: 
+				</td><td><input type="text" id="name" /></td></tr>
+				
+				<tr><td> To be added as:</td><td> <select
+					id="type">
+					<option>Member</option>
+					<option>Admin</option>
+				</select></td><td>
+		
+			<button id="submit" onClick="onSubmit()">Submit</button>
+			</td>
+			</tr>
+			
+		
+			
+			</table>
+		</form>	<div id="results"></div>
+	</div>
+
+
+	<script>
+	
+	function Person(name, type)
+	{  this.name = name; 
+	this.type = type; }  
+	
+	Person.prototype.getName = function()
+	{  return this.name; }  
+	
+	function Member(name)
+	{  Person.call(this, name, "Member");
+		this.MemberCode = Math.floor(Math.random()*2);
+	}  
+	
+	Member.prototype.getMemberCode = function()
+	{  return this.MemberCode;
+	}  
+	
+	function Admin(name)
+	{  Person.call(this, name, "Admin"); 
+		this.AdminCode = Math.floor(Math.random()*2);
+	}  
+	
+	Professor.prototype.getAdminCode = function(){
+		return this.AdminCode; 
+	}
+
+	 
+	
+	function onSubmit()
+	{
+		var result = "Creating instance of type ";
+		var name = document.getElementById("name").value;  
+		var type = document.getElementById("type").value; 
+		
+		if(type === "Member")
+		{  
+			var member = new Member(name);  
+			result += "Member = Name: " + name + ", Member Code: " + member.getMemberCode(); 
+			
+		}
+		else if(type === "Admin")
+		{   
+			var admin = new Admin(name);
+			result += "Admin = Admin Name: " + name + ", Admin Code: " + admin.getAdminCode(); 
+			
+		} 
+		
+		alert(result);
+		
+	} </script>
+</body>
+</html> 

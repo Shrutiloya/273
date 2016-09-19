@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="Stylesheet" href="background.css" type="text/css" />
+	<title>Odd-Even</title>
+</head>
+
+<body>
+	<h1>Assignment 1 - Conditions</h1><br>
+
+	<table>
+ 			<tr>
+                <td>
+                 	  <b>Enter a Number: </b>
+                </td>
+                <td>
+                	 <input name="num" id="num" type="text" value="" />
+                </td>
+                <td>
+             	    <input type="button" id="check" onclick="CheckEvenOrOdd()"value="CHECK" />
+                 </td>
+            </tr>
+		
+	</table>
+	<p id="demo"></p>
+	<script>
+		function CheckEvenOrOdd()
+		{
+			var number = document.getElementById("num").value;
+			( number & 1 ) ? alert("Its an odd number") : alert("Its an even number");
+		}
+	</script>
+
+</body>
+
+</html>
